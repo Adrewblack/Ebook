@@ -13,6 +13,17 @@ const closeInfo = document.querySelector(".close-info");
 const productRow = document.querySelector(".products");
 
 window.addEventListener("DOMContentLoaded", () => {
+  const loadingSpinner = document.getElementById("loading-spinner");
+  loadingSpinner.style.display = "block";
+  document.body.style = "background: #000";
+  document.querySelector("main").style.display = "none";
+  document.querySelector("header").style.display = "none";
+  setTimeout(() => {
+    loadingSpinner.style.display = "none";
+    document.body.style.background = "white";
+    document.querySelector("main").style.display = "block";
+    document.querySelector("header").style.display = "block";
+  }, 2000);
   fetch("https://openlibrary.org/people/mekBot/books/currently-reading.json")
     .then((res) => res.json())
     .then((data) => {
@@ -114,6 +125,7 @@ window.addEventListener("DOMContentLoaded", () => {
       searchLoading.textContent = "Loading";
       productRow.innerHTML = "";
       productRow.appendChild(searchLoading);
+
       fetch(`https://openlibrary.org/search.json?q=${searchTerm}`)
         .then((res) => res.json())
         .then((data) => {
@@ -178,6 +190,7 @@ window.addEventListener("DOMContentLoaded", () => {
               cardFooter.append(productDesc, buttons);
               productCard.append(cardBody, cardFooter);
               productRow.appendChild(productCard);
+              searchLoading.remove();
             }
           } else {
             alert("This book not found");
@@ -186,6 +199,9 @@ window.addEventListener("DOMContentLoaded", () => {
         .catch((error) => {
           console.error("Error fetching search data:", error);
         });
+      if (searchTerm.value == "") {
+        productRow.appendChild(productCard);
+      }
     }
   });
 });
