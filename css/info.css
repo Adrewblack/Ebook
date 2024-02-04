@@ -1,0 +1,120 @@
+.book-info {
+  height: 100%;
+  position: fixed;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+  background: rgb(255, 255, 255);
+  right: -100%;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  transition: all 1.5s;
+  overflow-y: scroll;
+}
+
+.book-info-show {
+  position: fixed;
+  right: 0;
+}
+
+.info-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background: rgb(248, 250, 253);
+  padding: 23px 40px;
+}
+
+.info-header span {
+  color: rgb(34, 37, 49);
+  font-family: Rubik;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0%;
+}
+
+.info-header button {
+  background: transparent;
+}
+
+.book-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 44px 175px;
+}
+
+.book-cover img {
+  width: 230px;
+  height: 300px;
+}
+
+.book-details {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-right: 40px;
+  > span {
+    max-width: 470px;
+    color: rgb(88, 102, 126);
+    font-family: Rubik;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 170.3%;
+    letter-spacing: 0%;
+    text-align: left;
+  }
+}
+
+.book-informations {
+  margin-top: 20px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 17px;
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    > h1 {
+      color: rgb(34, 37, 49);
+      font-family: Rubik;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0%;
+      text-align: left;
+    }
+    > span {
+      border-radius: 30px;
+      background: rgba(13, 117, 255, 0.09);
+      padding: 5px 10px;
+      color: rgb(13, 117, 255);
+      font-family: Rubik;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0%;
+    }
+  }
+}
+
+.book-read {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding: 10px 15px;
+  background: rgb(248, 250, 253);
+  padding: 23px 40px;
+  > button {
+    padding: 10px 40px;
+  }
+}

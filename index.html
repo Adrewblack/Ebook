@@ -3,174 +3,42 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>BookShop</title>
+    <title>BookShop Register Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="shortcut icon"
-      href="./assets/book-open.svg"
-      type="image/x-icon"
-    />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="./css/main.css"
+      href="./css/login.css"
     />
-    <script defer src="./js/main.js"></script>
+    <script defer src="./js/login.js"></script>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <nav>
-          <div class="nav-left">
-            <a href="#" class="logo"
-              ><img src="./assets/logo.svg" alt="logo"
-            /></a>
-            <div class="search-bar">
-              <input
-                type="search"
-                placeholder="Search books..."
-                name="search-product"
-                id="search-input"
-              />
-              <img src="./assets/search.svg" alt="search" />
-            </div>
-          </div>
-          <div class="nav-right">
-            <button class="site-mode">
-              <img src="./assets/light.svg" class="light" alt="light" />
-            </button>
-            <button class="logout">Log out</button>
-          </div>
-        </nav>
-      </div>
-    </header>
     <main>
-      <div class="bookmark-side">
-        <button class="bookmark-open">
-          <img src="./assets/bookmark.svg" alt="bookmark" />
-        </button>
-        <div class="bookmark-opened">
-          <h1>Bookmarks</h1>
-          <p>If you don’t like to read, you haven’t found the right book</p>
-          <div class="marked-books"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="products">
-          <div class="product-card" name="1">
-            <div class="card-body">
-              <img src="./assets/products/book1.png" alt="" />
+      <div class="container2">
+        <div class="main-content">
+          <div class="logo"><img src="./assets/logo.svg" alt="" /></div>
+          <form>
+            <div class="input-username">
+              <img src="./assets/user.svg" alt="" />
+              <input
+                type="text"
+                required
+                placeholder="USERNAME"
+                autocomplete="off"
+              />
             </div>
-            <div class="card-footer">
-              <div class="product-desc">
-                <span class="book-name">Python</span>
-                <p class="author">David M.Beazley</p>
-                <p class="book-date">2009</p>
-              </div>
-              <div class="buttons">
-                <button class="bookmark-btn">Bookmark</button>
-                <button class="more-info">More Info</button>
-                <button class="read-btn">Read</button>
-              </div>
+            <div class="input-password">
+              <img src="./assets/lock.svg" alt="" />
+              <input
+                type="password"
+                required
+                placeholder="PASSWORD"
+                autocomplete="off"
+              />
             </div>
-          </div>
-          <div class="product-card" name="2">
-            <div class="card-body">
-              <img src="./assets/products/book2.png" alt="" />
-            </div>
-            <div class="card-footer">
-              <div class="product-desc">
-                <span class="book-name">Python</span>
-                <p class="author">David M.Beazley</p>
-                <p class="book-date">2009</p>
-              </div>
-              <div class="buttons">
-                <button class="bookmark-btn">Bookmark</button>
-                <button class="more-info">More Info</button>
-                <button class="read-btn">Read</button>
-              </div>
-            </div>
-          </div>
-          <div class="product-card" name="3">
-            <div class="card-body">
-              <img src="./assets/products/book3.png" alt="" />
-            </div>
-            <div class="card-footer">
-              <div class="product-desc">
-                <span class="book-name">Python</span>
-                <p class="author">David M.Beazley</p>
-                <p class="book-date">2009</p>
-              </div>
-              <div class="buttons">
-                <button class="bookmark-btn">Bookmark</button>
-                <button class="more-info">More Info</button>
-                <button class="read-btn">Read</button>
-              </div>
-            </div>
-          </div>
-          <div class="product-card" name="4">
-            <div class="card-body">
-              <img src="./assets/products/book4.png" alt="" />
-            </div>
-            <div class="card-footer">
-              <div class="product-desc">
-                <span class="book-name">Python</span>
-                <p class="author">David M.Beazley</p>
-                <p class="book-date">2009</p>
-              </div>
-              <div class="buttons">
-                <button class="bookmark-btn">Bookmark</button>
-                <button class="more-info">More Info</button>
-                <button class="read-btn">Read</button>
-              </div>
-            </div>
-          </div>
-          <div class="product-card" name="5">
-            <div class="card-body">
-              <img src="./assets/products/book5.png" alt="" />
-            </div>
-            <div class="card-footer">
-              <div class="product-desc">
-                <span class="book-name">Python</span>
-                <p class="author">David M.Beazley</p>
-                <p class="book-date">2009</p>
-              </div>
-              <div class="buttons">
-                <button class="bookmark-btn">Bookmark</button>
-                <button class="more-info">More Info</button>
-                <button class="read-btn">Read</button>
-              </div>
-            </div>
-          </div>
-          <div class="product-card" name="6">
-            <div class="card-body">
-              <img src="./assets/products/book6.png" alt="" />
-            </div>
-            <div class="card-footer">
-              <div class="product-desc">
-                <span class="book-name">Python</span>
-                <p class="author">David M.Beazley</p>
-                <p class="book-date">2009</p>
-              </div>
-              <div class="buttons">
-                <button class="bookmark-btn">Bookmark</button>
-                <button class="more-info">More Info</button>
-                <button class="read-btn">Read</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="pagination">
-          <button class="pages">Previous</button>
-          <button class="pages">1</button>
-          <button class="pages">2</button>
-          <button class="pages">3</button>
-          <button class="pages">4</button>
-          <button class="pages">5</button>
-          <button class="pages">6</button>
-          <button class="pages">7</button>
-          <button class="pages">Next</button>
+            <button class="register">Register</button>
+          </form>
         </div>
       </div>
     </main>

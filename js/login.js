@@ -1,37 +1,20 @@
-"use strict";
+const registerBtn = document.querySelector(".register");
 
-let elForm = document.querySelector(".form");
-let elUsernameInput = document.querySelector(".input-username");
-let elPasswordInput = document.querySelector(".input-password");
+registerBtn.addEventListener("click", (event) => {
+  event.preventDefault();
 
+  const usernameInput = document.querySelector(".input-username input");
+  const passwordInput = document.querySelector(".input-password input");
 
+  const usernameValue = usernameInput.value;
+  const passwordValue = passwordInput.value;
 
-elForm.addEventListener("submit", function (evt) {
-    evt.preventDefault();
+  if (usernameValue !== "" && passwordValue !== "") {
+    localStorage.setItem("username", usernameValue);
+    localStorage.setItem("password", passwordValue);
 
-   const login = "login";
-
-    const usernameValue = elUsernameInput.value;
-    const passwordValue = elPasswordInput.value;
-
-    fetch(`https://reqres.in/api/${login}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: usernameValue,
-        password: passwordValue,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data?.token) {
-          window.localStorage.setItem("token", data.token);
-
-          window.location.replace("home.html");
-        } else {
-          alert("emailingiz yoki parolingiz xato kirgizildi");
-        }
-      });
-  });
+    window.location.href = "../pages/home.html";
+  } else {
+    alert("Please fill in all fields");
+  }
+});
