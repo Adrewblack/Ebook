@@ -6,15 +6,36 @@
     <title>BookShop Register Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
+      rel="shortcut icon"
+      href="./assets/book-open.svg"
+      type="image/x-icon"
+    />
+    <link
       rel="stylesheet"
       type="text/css"
       media="screen"
       href="./css/login.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
     <script defer src="./js/login.js"></script>
   </head>
   <body>
     <div id="loading-spinner"><span class="loader"></span></div>
+    <div class="successfull">
+      <span>Muvaffaqiyatli kirish!</span>
+    </div>
+    <div class="modal">
+      <div class="exit">
+        <img src="./assets/close.svg" alt="exit" width="20px" />
+      </div>
+      <p>Siz kiritayotgan kalitda:</p>
+      <span>Kamida 1 ta Katta harf</span><span>Kamida 1 ta raqam</span
+      ><span>Kamida 1 ta simvol <strong> [ !@#$%^&*()_+/\-= ]</strong></span>
+      <p>qatnashishi shart</p>
+    </div>
     <main>
       <div class="container2">
         <div class="main-content">
@@ -37,6 +58,9 @@
                 placeholder="PASSWORD"
                 autocomplete="off"
               />
+              <span class="material-symbols-outlined show-password">
+                visibility
+              </span>
             </div>
             <button class="register">Register</button>
           </form>
