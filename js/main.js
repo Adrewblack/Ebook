@@ -66,7 +66,6 @@ window.addEventListener("DOMContentLoaded", () => {
           const bookName = card.querySelector(".book-name").textContent;
           const bookAuthor = card.querySelector(".author").textContent;
           const bookPublished = card.querySelector(".book-date").textContent;
-          // Replace the following placeholder values with actual data
           const bookPublishers = "Book Publishers";
           const bookCategories = "Book Categories";
           const bookCount = "Book Count";
@@ -92,25 +91,19 @@ window.addEventListener("DOMContentLoaded", () => {
           const card = bookmarkBtn.closest(".product-card");
           const bookName = card.querySelector(".book-name").textContent;
           const bookAuthor = card.querySelector(".author").textContent;
-          const isAlreadyMarked = Array.from(markedBooks.children).some(
-            (markedBook) => {
-              const existingBookName =
-                markedBook.querySelector(".book-desc span").textContent;
-              const existingBookAuthor =
-                markedBook.querySelector(".book-desc p").textContent;
-              return (
-                existingBookName === bookName &&
-                existingBookAuthor === bookAuthor
-              );
-            }
+          const markedBooksData = loadMarkedBooksFromLocalStorage();
+          const isAlreadyMarked = markedBooksData.some(
+            (book) =>
+              book.bookName === bookName && book.bookAuthor === bookAuthor
           );
+
           if (!isAlreadyMarked) {
             markedBooks.appendChild(getMarkedBookElement(bookName, bookAuthor));
             saveMarkedBooksToLocalStorage(bookName, bookAuthor);
             pagination.style.marginLeft = "70px";
             openBookmarkSide();
           } else {
-            alert("This book already marked");
+            alert("This book is already bookmarked");
           }
         });
       }
@@ -168,18 +161,12 @@ window.addEventListener("DOMContentLoaded", () => {
                 const card = bookmarkBtn.closest(".product-card");
                 const bookName = card.querySelector(".book-name").textContent;
                 const bookAuthor = card.querySelector(".author").textContent;
-                const isAlreadyMarked = Array.from(markedBooks.children).some(
-                  (markedBook) => {
-                    const existingBookName =
-                      markedBook.querySelector(".book-desc span").textContent;
-                    const existingBookAuthor =
-                      markedBook.querySelector(".book-desc p").textContent;
-                    return (
-                      existingBookName === bookName &&
-                      existingBookAuthor === bookAuthor
-                    );
-                  }
+                const markedBooksData = loadMarkedBooksFromLocalStorage();
+                const isAlreadyMarked = markedBooksData.some(
+                  (book) =>
+                    book.bookName === bookName && book.bookAuthor === bookAuthor
                 );
+
                 if (!isAlreadyMarked) {
                   markedBooks.appendChild(
                     getMarkedBookElement(bookName, bookAuthor)
@@ -188,7 +175,7 @@ window.addEventListener("DOMContentLoaded", () => {
                   pagination.style.marginLeft = "70px";
                   openBookmarkSide();
                 } else {
-                  alert("This book already marked");
+                  alert("This book is already bookmarked");
                 }
               });
 
